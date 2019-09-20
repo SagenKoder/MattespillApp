@@ -75,11 +75,11 @@
             android:drawableStart="@drawable/inline_ic_arrow_back_white"
             android:drawablePadding="10dp"
             android:onClick="showMainMenu"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="@dimen/button_paddingX"
+            android:paddingRight="@dimen/button_paddingX"
             android:text="@string/preferanser_button_back"
             android:textColor="@color/icons"
-            android:textSize="28sp" />
+            android:textSize="@dimen/text_button_size" />
 
     </LinearLayout>
 </TableLayout>

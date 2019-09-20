@@ -1,13 +1,13 @@
 package app.sagen.aktiviteter;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import app.sagen.StorageHelper;
 
 public class PreferanserActivity extends AppCompatActivity {
 
@@ -22,23 +22,14 @@ public class PreferanserActivity extends AppCompatActivity {
     private void loadValues() {
         Log.d("PreferenceActivity", "Loading values for preferences");
 
-        SharedPreferences sharedPref = getSharedPreferences(
-                getString(R.string.preferanser_file), Context.MODE_PRIVATE);
+        StorageHelper.Storage data = StorageHelper.loadStorage(this);
 
-        int numTasks = sharedPref.getInt(
-                getString(R.string.preferenser_setting_key_num_tasks),
-                getResources().getInteger(R.integer.preferanser_default_num_tasks));
-
-        String lang = sharedPref.getString(
-                getString(R.string.preferenser_setting_key_language),
-                getResources().getString(R.string.preferanser_default_language));
-
-        Log.d("PreferenceActivity", "num_tasks = " + numTasks + " AND language = " + lang);
+        Log.d("PreferenceActivity", "num_tasks = " + data.getNumTasks() + " AND language = " + data.getLanguage());
 
         RadioButton radioButtonNorsk = findViewById(R.id.radio_norsk);
         RadioButton radioButtonTysk = findViewById(R.id.radio_tysk);
 
-        switch (lang) {
+        switch (data.getLanguage()) {
             case "NO":
                 radioButtonNorsk.setChecked(true);
                 break;
@@ -46,7 +37,7 @@ public class PreferanserActivity extends AppCompatActivity {
                 radioButtonTysk.setChecked(true);
                 break;
             default:
-                Log.e("PreferenceActivity", "Could not find the language '" + lang + "'!");
+                Log.e("PreferenceActivity", "Could not find the language '" + data.getLanguage() + "'!");
         }
 
 
@@ -58,14 +49,14 @@ public class PreferanserActivity extends AppCompatActivity {
         int num2 = getResources().getInteger(R.integer.preference_number_of_tasks_2);
         int num3 = getResources().getInteger(R.integer.preference_number_of_tasks_3);
 
-        if(numTasks == num1) {
+        if(data.getNumTasks() == num1) {
             radioButtonNumTasks1.setChecked(true);
-        } else if(numTasks == num2) {
+        } else if(data.getNumTasks() == num2) {
             radioButtonNumTasks2.setChecked(true);
-        } else if(numTasks == num3) {
+        } else if(data.getNumTasks() == num3) {
             radioButtonNumTasks3.setChecked(true);
         } else {
-            Log.e("PreferenceActivity", "Could not find the number '" + numTasks + "'!");
+            Log.e("PreferenceActivity", "Could not find the number '" + data.getNumTasks() + "'!");
         }
     }
 
@@ -82,43 +73,37 @@ public class PreferanserActivity extends AppCompatActivity {
     public void updateNumTasks(View view) {
         Log.d("PreferanserActivity", "updateNumTasks :: " + view.toString());
 
-        SharedPreferences.Editor editor = getSharedPreferences(
-                getString(R.string.preferanser_file), Context.MODE_PRIVATE).edit();
-
-        String numTasksKey = getResources().getString(R.string.preferenser_setting_key_num_tasks);
+        StorageHelper.Storage data = StorageHelper.loadStorage(this);
 
         switch (view.getId()) {
             case R.id.radio_num_tasks_1:
-                editor.putInt(numTasksKey, getResources().getInteger(R.integer.preference_number_of_tasks_1));
+                data.setNumTasks(getResources().getInteger(R.integer.preference_number_of_tasks_1));
                 break;
             case R.id.radio_num_tasks_2:
-                editor.putInt(numTasksKey, getResources().getInteger(R.integer.preference_number_of_tasks_2));
+                data.setNumTasks(getResources().getInteger(R.integer.preference_number_of_tasks_2));
                 break;
             case R.id.radio_num_tasks_3:
-                editor.putInt(numTasksKey, getResources().getInteger(R.integer.preference_number_of_tasks_3));
+                data.setNumTasks(getResources().getInteger(R.integer.preference_number_of_tasks_3));
                 break;
         }
 
-        editor.apply();
+        StorageHelper.saveStorage(this, data);
     }
 
     public void updateLanguage(View view) {
         Log.d("PreferanserActivity", "updateLanguage :: " + view.toString());
 
-        SharedPreferences.Editor editor = getSharedPreferences(
-                getString(R.string.preferanser_file), Context.MODE_PRIVATE).edit();
-
-        String langKey= getResources().getString(R.string.preferenser_setting_key_language);
+        StorageHelper.Storage data = StorageHelper.loadStorage(this);
 
         switch (view.getId()) {
             case R.id.radio_norsk:
-                editor.putString(langKey, "NO");
+                data.setLanguage("NO");
                 break;
             case R.id.radio_tysk:
-                editor.putString(langKey, "DE");
+                data.setLanguage("DE");
                 break;
         }
 
-        editor.apply();
+        StorageHelper.saveStorage(this, data);
     }
 }

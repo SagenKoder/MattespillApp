@@ -11,6 +11,10 @@
     <string name="preferanser_button_back">Tilbake</string>
     <string name="preferanser_file">preferences</string>
     <string name="preferenser_setting_key_num_tasks">num_tasks</string>
+    <string name="preferenser_setting_current_correct">current_correct</string>
+    <string name="preferenser_setting_current_wrong">current_wrong</string>
+    <string name="preferenser_setting_total_correct">total_correct</string>
+    <string name="preferenser_setting_total_wrong">total_wrong</string>
     <string name="preferenser_setting_key_language">language</string>
     <integer name="preferanser_default_num_tasks">5</integer>
     <string name="preferanser_default_language">DE</string>

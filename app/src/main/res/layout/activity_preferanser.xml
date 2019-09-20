@@ -3,49 +3,67 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
-    <TableRow
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="60dp"
-        android:gravity="center_horizontal"
-        android:background="@color/primary">
+        android:layout_height="200dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/preferanser_title"
-            android:textAlignment="center"
-            android:textSize="32sp"
-            android:textColor="@color/icons"/>
-    </TableRow>
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/green_bg"/>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:background="@color/primary"
-        android:paddingBottom="60dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/preferanser_subtitle"
-            android:textAlignment="center"
-            android:textColor="@color/icons"
-            android:textSize="20sp"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="60dp"
+                android:gravity="center_horizontal">
 
-    </TableRow>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferanser_title"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_title_size"
+                    android:textColor="@color/icons"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dp"
+                android:paddingBottom="60dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferanser_subtitle"
+                    android:textAlignment="center"
+                    android:textColor="@color/icons"
+                    android:textSize="@dimen/text_subtitle_size"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
 
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:paddingTop="90dp">
+        android:paddingTop="60dp">
 
         <TableLayout
             android:layout_width="wrap_content"
@@ -61,7 +79,7 @@
                     android:text="@string/preferanser_sprak"
                     android:textAlignment="center"
                     android:textColor="@color/secondary_text"
-                    android:textSize="20sp"/>
+                    android:textSize="@dimen/text_subtitle_size"/>
             </TableRow>
 
             <TableRow
@@ -94,7 +112,7 @@
 
             </TableRow>
 
-            <TableRow android:paddingTop="55dp">
+            <TableRow android:paddingTop="35dp">
 
                 <TextView
                     android:id="@+id/textView222"
@@ -103,7 +121,7 @@
                     android:text="@string/preferanser_antall_oppgaver"
                     android:textAlignment="center"
                     android:textColor="@color/secondary_text"
-                    android:textSize="20sp"/>
+                    android:textSize="@dimen/text_subtitle_size"/>
             </TableRow>
 
             <TableRow
@@ -163,11 +181,12 @@
             android:drawableStart="@drawable/inline_ic_arrow_back_white"
             android:drawablePadding="10dp"
             android:onClick="showMainMenu"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
+            android:paddingLeft="@dimen/button_paddingX"
+            android:paddingRight="@dimen/button_paddingX"
             android:text="@string/preferanser_button_back"
             android:textColor="@color/icons"
-            android:textSize="28sp" />
+            android:textSize="@dimen/text_button_size" />
 
     </LinearLayout>
+
 </TableLayout>
