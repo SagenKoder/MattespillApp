@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="60dp"
+        android:gravity="center_horizontal"
+        android:background="@color/primary">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/statistikk_title"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textColor="@color/icons"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:background="@color/primary"
+        android:paddingBottom="60dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/statistikk_subtitle"
+            android:textAlignment="center"
+            android:textColor="@color/icons"
+            android:textSize="20sp"/>
+
+    </TableRow>
+
+
+
+
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="90dp">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TableLayout>
+
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingRight="60dp"
+        android:paddingLeft="60dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttons"
+            android:drawableStart="@drawable/inline_ic_arrow_back_white"
+            android:drawablePadding="10dp"
+            android:onClick="showMainMenu"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/preferanser_button_back"
+            android:textColor="@color/icons"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+</TableLayout>

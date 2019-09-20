@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Aktiviteter</string>
+    <string name="front_title">Sagens Matteskole</string>
+    <string name="front_subtitle">Lær å regne enkelt og morsomt</string>
+    <string name="front_button_start_spill">Start spill</string>
+    <string name="front_button_se_statistikk">Se statistikk</string>
+    <string name="front_button_preferanser">Preferanser</string>
+
+    <string name="preferanser_title">Preferanser</string>
+    <string name="preferanser_subtitle">Tilpass din spillopplevelse</string>
+    <string name="preferanser_button_back">Tilbake</string>
+    <string name="preferanser_file">preferences</string>
+    <string name="preferenser_setting_key_num_tasks">num_tasks</string>
+    <string name="preferenser_setting_key_language">language</string>
+    <integer name="preferanser_default_num_tasks">5</integer>
+    <string name="preferanser_default_language">DE</string>
+    <string name="preferanser_language_norsk">Norsk</string>
+    <string name="preferanser_language_tysk">Deutsche</string>
+    <string name="preferanser_antall_oppgaver">Antall oppgaver</string>
+    <integer name="preference_number_of_tasks_1">5</integer>
+    <integer name="preference_number_of_tasks_2">10</integer>
+    <integer name="preference_number_of_tasks_3">25</integer>
+
+    <string name="statistikk_file">statistikk</string>
+    <string name="preferanser_sprak">Språk</string>
+    <string name="statistikk_title">Statistikk</string>
+    <string name="statistikk_subtitle">Se dine resultater</string>
+</resources>

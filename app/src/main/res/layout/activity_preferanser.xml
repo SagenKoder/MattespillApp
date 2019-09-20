@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="60dp"
+        android:gravity="center_horizontal"
+        android:background="@color/primary">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferanser_title"
+            android:textAlignment="center"
+            android:textSize="32sp"
+            android:textColor="@color/icons"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        android:background="@color/primary"
+        android:paddingBottom="60dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preferanser_subtitle"
+            android:textAlignment="center"
+            android:textColor="@color/icons"
+            android:textSize="20sp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:paddingTop="90dp">
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferanser_sprak"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="20sp"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingTop="20dp">
+
+                <RadioGroup
+                    android:id="@+id/radio_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:minWidth="200dp">
+
+                    <RadioButton
+                        android:id="@+id/radio_norsk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="updateLanguage"
+                        android:text="@string/preferanser_language_norsk" />
+
+                    <RadioButton
+                        android:id="@+id/radio_tysk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateLanguage"
+                        android:text="@string/preferanser_language_tysk" />
+                </RadioGroup>
+
+            </TableRow>
+
+            <TableRow android:paddingTop="55dp">
+
+                <TextView
+                    android:id="@+id/textView222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferanser_antall_oppgaver"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="20sp"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingTop="20dp">
+
+                <RadioGroup
+                    android:id="@+id/radio_num_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_1" />
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_2" />
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_3" />
+                </RadioGroup>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingRight="60dp"
+        android:paddingLeft="60dp">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/buttons"
+            android:drawableStart="@drawable/inline_ic_arrow_back_white"
+            android:drawablePadding="10dp"
+            android:onClick="showMainMenu"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="@string/preferanser_button_back"
+            android:textColor="@color/icons"
+            android:textSize="28sp" />
+
+    </LinearLayout>
+</TableLayout>
