@@ -4,41 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TableRow
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="60dp"
-        android:gravity="center_horizontal"
-        android:background="@color/primary">
+        android:layout_height="200dp">
 
-        <TextView
-            android:id="@+id/front_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/front_title"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_title_size"
-            android:textColor="@color/icons"/>
-    </TableRow>
+        <!--    Imageview for om jeg ønsker bilde i fremtiden    -->
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/primary"/>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:paddingTop="20dp"
-        android:background="@color/primary"
-        android:paddingBottom="60dp">
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/front_subtitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/front_subtitle"
-            android:textAlignment="center"
-            android:textColor="@color/icons"
-            android:textSize="@dimen/text_subtitle_size"/>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingTop="60dp"
+                android:gravity="center_horizontal">
 
-    </TableRow>
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/front_title"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/text_title_size"
+                    android:textColor="@color/icons"
+                    android:shadowColor="#000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/front_subtitle"
+                android:textAlignment="center"
+                android:textColor="@color/icons"
+                android:textSize="@dimen/text_subtitle_size"
+                android:shadowColor="#000"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,8 +83,8 @@
             android:drawableStart="@drawable/inline_ic_favorite_white"
             android:drawablePadding="10dp"
             android:onClick="showGame"
-            android:paddingLeft="@dimen/button_paddingX"
-            android:paddingRight="@dimen/button_paddingX"
+            android:paddingStart="@dimen/button_padding_left"
+            android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/front_button_start_spill"
             android:textColor="@color/icons"
             android:textSize="@dimen/text_button_size"
@@ -71,8 +98,8 @@
             android:drawableStart="@drawable/inline_ic_assessment_white"
             android:drawablePadding="10dp"
             android:onClick="showStatistikk"
-            android:paddingLeft="@dimen/button_paddingX"
-            android:paddingRight="@dimen/button_paddingX"
+            android:paddingStart="@dimen/button_padding_left"
+            android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/front_button_se_statistikk"
             android:textColor="@color/icons"
             android:textSize="@dimen/text_button_size"
@@ -86,8 +113,8 @@
             android:drawableStart="@drawable/inline_ic_build_white"
             android:drawablePadding="10dp"
             android:onClick="showPreferences"
-            android:paddingLeft="@dimen/button_paddingX"
-            android:paddingRight="@dimen/button_paddingX"
+            android:paddingStart="@dimen/button_padding_left"
+            android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/front_button_preferanser"
             android:textColor="@color/icons"
             android:textSize="@dimen/text_button_size"/>

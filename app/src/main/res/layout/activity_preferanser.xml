@@ -10,12 +10,13 @@
         android:layout_width="match_parent"
         android:layout_height="200dp">
 
+<!--    Imageview for om jeg ønsker bilde i fremtiden    -->
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/green_bg"/>
+            android:background="@color/primary"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -34,15 +35,16 @@
                     android:text="@string/preferanser_title"
                     android:textAlignment="center"
                     android:textSize="@dimen/text_title_size"
-                    android:textColor="@color/icons"/>
-            </TableRow>
-
-            <TableRow
+                    android:textColor="@color/icons"
+                    android:shadowColor="#000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
+            </TableRow>            <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:gravity="center_horizontal"
-                android:paddingTop="20dp"
-                android:paddingBottom="60dp">
+                android:paddingTop="20dp">
 
                 <TextView
                     android:id="@+id/textView2"
@@ -51,7 +53,11 @@
                     android:text="@string/preferanser_subtitle"
                     android:textAlignment="center"
                     android:textColor="@color/icons"
-                    android:textSize="@dimen/text_subtitle_size"/>
+                    android:textSize="@dimen/text_subtitle_size"
+                    android:shadowColor="#000"
+                    android:shadowDx="1"
+                    android:shadowDy="1"
+                    android:shadowRadius="2"/>
 
             </TableRow>
 
@@ -137,7 +143,7 @@
                         android:id="@+id/radio_num_tasks_1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                       android:layout_weight="1"
                         android:checked="true"
                         android:onClick="updateNumTasks"
                         android:text="@integer/preference_number_of_tasks_1" />
@@ -181,11 +187,12 @@
             android:drawableStart="@drawable/inline_ic_arrow_back_white"
             android:drawablePadding="10dp"
             android:onClick="showMainMenu"
-            android:paddingLeft="@dimen/button_paddingX"
-            android:paddingRight="@dimen/button_paddingX"
+            android:paddingStart="@dimen/button_padding_left"
+            android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/preferanser_button_back"
             android:textColor="@color/icons"
-            android:textSize="@dimen/text_button_size" />
+            android:textSize="@dimen/text_button_size"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
 

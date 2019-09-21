@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="app.sagen.aktiviteter">
+    package="app.sagen.matteapp.aktiviteter">
 
     <application
         android:allowBackup="true"
@@ -11,22 +11,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity
-            android:name=".StatistikkActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".PreferanserActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SpillActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HovedActivity">
+        <activity android:name="app.sagen.matteapp.aktiviteter.HovedActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="app.sagen.matteapp.aktiviteter.StatistikkActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HovedActivity"/>
+        <activity
+            android:name="app.sagen.matteapp.aktiviteter.PreferanserActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HovedActivity" />
+        <activity
+            android:name="app.sagen.matteapp.aktiviteter.SpillActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:parentActivityName=".HovedActivity" />
     </application>
 
 </manifest>

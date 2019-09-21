@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Matte Spiele</string>
+    <string name="front_button_preferanser">Voreinstellungen</string>
+    <string name="front_button_se_statistikk">Siehe Statistiken</string>
+    <string name="front_button_start_spill">Spiele starten</string>
+    <string name="front_subtitle">Lernen Sie einfach und macht Spaß zu zählen</string>
+    <string name="front_title">Sagens Matte\'s Schule</string>
+    <string name="preferanser_antall_oppgaver">Anzahl der Aufgaben</string>
+    <string name="preferanser_button_back">Zurück</string>
+    <string name="preferanser_sprak">Sprache</string>
+    <string name="preferanser_subtitle">Passen Sie Ihr Spielerlebnis an</string>
+    <string name="preferanser_title">Voreinstellungen</string>
+    <string name="statistikk_subtitle">Sehen Sie Ihre Ergebnisse</string>
+    <string name="statistikk_title">Statistik</string>
+    <string name="spill_angre">Entfernen</string>
+    <string name="spill_avslutt">Ausfahrt</string>
+    <string name="spill_los_oppgaven">Lösen Sie das Problem</string>
+    <string name="dialog_finished_message">Sie haben mit %s von %s richtig geantwortet. Möchten Sie eine neue Runde beginnen oder beenden?</string>
+    <string name="dialog_finished_new">Neue Runde</string>
+    <string name="dialog_finished_quit">Ausfahrt</string>
+    <string name="dialog_finished_title">Du bist fertig!</string>
+    <string name="dialog_no_more_btn_avslutt">Ausfahrt</string>
+    <string name="dialog_no_more_message">Sie haben keine Fragen zur Verfügung. Starten Sie die App neu, um neue Fragen zu laden.</string>
+    <string name="dialog_no_more_title">Keine weiteren Fragen!</string>
+    <string name="spill_feil_svar">Falsche Antwort</string>
+    <string name="spill_riktig_svar">Richtige Antwort</string>
+</resources>

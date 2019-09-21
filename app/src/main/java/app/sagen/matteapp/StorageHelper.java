@@ -1,9 +1,14 @@
-package app.sagen;
+package app.sagen.matteapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+import android.util.Log;
 
-import app.sagen.aktiviteter.R;
+import java.util.Locale;
+
+import app.sagen.matteapp.aktiviteter.R;
 
 public class StorageHelper {
 
@@ -17,12 +22,9 @@ public class StorageHelper {
                 context.getResources().getString(R.string.preferenser_setting_key_num_tasks),
                 context.getResources().getInteger(R.integer.preferanser_default_num_tasks));
 
-        String langKey = context.getResources().getString(R.string.preferenser_setting_key_language);
-        String langDef = context.getResources().getString(R.string.preferanser_default_language);
-
         storage.language = sharedPref.getString(
-                langKey,
-                langDef);
+                context.getResources().getString(R.string.preferenser_setting_key_language),
+                context.getResources().getString(R.string.preferanser_default_language));
 
         storage.totalCorrect = sharedPref.getInt(
                 context.getResources().getString(R.string.preferenser_setting_total_correct),
@@ -75,15 +77,28 @@ public class StorageHelper {
         sharedPrefEdit.apply();
     }
 
+    public static void setSystemLangauge(Context context) {
+        SharedPreferences sharedPref = context.getSharedPreferences(
+                context.getString(R.string.preferanser_file), Context.MODE_PRIVATE);
+
+        String language = sharedPref.getString(
+                context.getResources().getString(R.string.preferenser_setting_key_language),
+                context.getResources().getString(R.string.preferanser_default_language));
+
+        LanguageHelper.setLocale(context, language);
+
+        Log.d("StorageHelper", "Changed app language to " + language + " v2" );
+    }
+
     public static class Storage {
-        int numTasks;
-        String language;
+        private int numTasks;
+        private String language;
 
-        int totalCorrect;
-        int totalWrong;
+        private int totalCorrect;
+        private int totalWrong;
 
-        int currentCorrect;
-        int currentWrong;
+        private int currentCorrect;
+        private int currentWrong;
 
         public int getNumTasks() {
             return numTasks;

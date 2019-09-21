@@ -1,4 +1,4 @@
-package app.sagen.aktiviteter;
+package app.sagen.matteapp.aktiviteter;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -7,7 +7,8 @@ import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.sagen.StorageHelper;
+import app.sagen.matteapp.LanguageHelper;
+import app.sagen.matteapp.StorageHelper;
 
 public class PreferanserActivity extends AppCompatActivity {
 
@@ -15,7 +16,6 @@ public class PreferanserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preferanser);
-
         loadValues();
     }
 
@@ -105,5 +105,7 @@ public class PreferanserActivity extends AppCompatActivity {
         }
 
         StorageHelper.saveStorage(this, data);
+        StorageHelper.setSystemLangauge(this);
+        recreate();
     }
 }

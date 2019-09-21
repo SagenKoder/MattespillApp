@@ -75,8 +75,8 @@
             android:drawableStart="@drawable/inline_ic_arrow_back_white"
             android:drawablePadding="10dp"
             android:onClick="showMainMenu"
-            android:paddingLeft="@dimen/button_paddingX"
-            android:paddingRight="@dimen/button_paddingX"
+            android:paddingStart="@dimen/button_padding_left"
+            android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/preferanser_button_back"
             android:textColor="@color/icons"
             android:textSize="@dimen/text_button_size" />

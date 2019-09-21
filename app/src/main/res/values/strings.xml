@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aktiviteter</string>
+    <string name="app_name">Matteapp</string>
     <string name="front_title">Sagens Matteskole</string>
     <string name="front_subtitle">Lær å regne enkelt og morsomt</string>
     <string name="front_button_start_spill">Start spill</string>
@@ -9,24 +9,47 @@
     <string name="preferanser_title">Preferanser</string>
     <string name="preferanser_subtitle">Tilpass din spillopplevelse</string>
     <string name="preferanser_button_back">Tilbake</string>
-    <string name="preferanser_file">preferences</string>
-    <string name="preferenser_setting_key_num_tasks">num_tasks</string>
-    <string name="preferenser_setting_current_correct">current_correct</string>
-    <string name="preferenser_setting_current_wrong">current_wrong</string>
-    <string name="preferenser_setting_total_correct">total_correct</string>
-    <string name="preferenser_setting_total_wrong">total_wrong</string>
-    <string name="preferenser_setting_key_language">language</string>
+    <string name="preferanser_file" translatable="false">preferences</string>
+    <string name="preferenser_setting_key_num_tasks" translatable="false">num_tasks</string>
+    <string name="preferenser_setting_current_correct" translatable="false">current_correct</string>
+    <string name="preferenser_setting_current_wrong" translatable="false">current_wrong</string>
+    <string name="preferenser_setting_total_correct" translatable="false">total_correct</string>
+    <string name="preferenser_setting_total_wrong" translatable="false">total_wrong</string>
+    <string name="preferenser_setting_key_language" translatable="false">language</string>
     <integer name="preferanser_default_num_tasks">5</integer>
-    <string name="preferanser_default_language">DE</string>
-    <string name="preferanser_language_norsk">Norsk</string>
-    <string name="preferanser_language_tysk">Deutsche</string>
+    <string name="preferanser_default_language" translatable="false">NO</string>
+    <string name="preferanser_language_norsk" translatable="false">Norsk</string>
+    <string name="preferanser_language_tysk" translatable="false">Deutsche</string>
     <string name="preferanser_antall_oppgaver">Antall oppgaver</string>
     <integer name="preference_number_of_tasks_1">5</integer>
     <integer name="preference_number_of_tasks_2">10</integer>
     <integer name="preference_number_of_tasks_3">25</integer>
 
-    <string name="statistikk_file">statistikk</string>
+    <string name="statistikk_file" translatable="false">statistikk</string>
     <string name="preferanser_sprak">Språk</string>
     <string name="statistikk_title">Statistikk</string>
     <string name="statistikk_subtitle">Se dine resultater</string>
+    <string name="spill_los_oppgaven">Løs oppgaven</string>
+    <string name="spill_avslutt">Avslutt</string>
+    <string name="spill_angre">Angre</string>
+    <string name="spill_1" translatable="false">1</string>
+    <string name="spill_2" translatable="false">2</string>
+    <string name="spill_3" translatable="false">3</string>
+    <string name="spill_4" translatable="false">4</string>
+    <string name="spill_5" translatable="false">5</string>
+    <string name="spill_6" translatable="false">6</string>
+    <string name="spill_7" translatable="false">7</string>
+    <string name="spill_8" translatable="false">8</string>
+    <string name="spill_9" translatable="false">9</string>
+    <string name="spill_0" translatable="false">0</string>
+    
+    <string name="dialog_no_more_title">Ingen fler spørsmål!</string>
+    <string name="dialog_no_more_message">Du har ingen spørsmål tilgjengelig... Restart appen for å laste nye spørsmål.</string>
+    <string name="dialog_no_more_btn_avslutt">Avslutt</string>
+    <string name="dialog_finished_title">Du er ferdig!</string>
+    <string name="dialog_finished_message">Du svarte riktig på %s av %s \nØnsker du å starte en ny runde eller avslutte?</string>
+    <string name="dialog_finished_new">Ny runde</string>
+    <string name="dialog_finished_quit">Avslutt</string>
+    <string name="spill_riktig_svar">Riktig svar</string>
+    <string name="spill_feil_svar">Feil svar</string>
 </resources>

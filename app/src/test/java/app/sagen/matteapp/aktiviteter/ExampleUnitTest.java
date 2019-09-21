@@ -1,4 +1,4 @@
-package app.sagen.aktiviteter;
+package app.sagen.matteapp.aktiviteter;
 
 import org.junit.Test;
 

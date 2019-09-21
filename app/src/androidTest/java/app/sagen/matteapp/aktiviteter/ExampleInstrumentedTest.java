@@ -1,4 +1,4 @@
-package app.sagen.aktiviteter;
+package app.sagen.matteapp.aktiviteter;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("app.sagen.aktiviteter", appContext.getPackageName());
+        assertEquals("app.sagen.matteapp.aktiviteter", appContext.getPackageName());
     }
 }

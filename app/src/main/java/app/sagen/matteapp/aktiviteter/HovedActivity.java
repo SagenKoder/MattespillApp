@@ -1,4 +1,4 @@
-package app.sagen.aktiviteter;
+package app.sagen.matteapp.aktiviteter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import app.sagen.matteapp.StorageHelper;
+
 public class HovedActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        StorageHelper.setSystemLangauge(this);
         setContentView(R.layout.activity_main);
     }
 
