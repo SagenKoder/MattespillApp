@@ -7,7 +7,6 @@ import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import app.sagen.matteapp.LanguageHelper;
 import app.sagen.matteapp.StorageHelper;
 
 public class PreferanserActivity extends AppCompatActivity {
@@ -106,6 +105,7 @@ public class PreferanserActivity extends AppCompatActivity {
 
         StorageHelper.saveStorage(this, data);
         StorageHelper.setSystemLangauge(this);
-        recreate();
+        setContentView(R.layout.activity_preferanser);
+        loadValues();
     }
 }

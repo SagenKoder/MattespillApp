@@ -5,6 +5,9 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
+import android.widget.TextView;
+
+import app.sagen.matteapp.StorageHelper;
 
 public class StatistikkActivity extends AppCompatActivity {
 
@@ -12,6 +15,7 @@ public class StatistikkActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistikk);
+        updateValues();
     }
 
     @Override
@@ -20,8 +24,27 @@ public class StatistikkActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
+    public void updateValues() {
+        TextView correctText = findViewById(R.id.correct_answers);
+        TextView wrongText = findViewById(R.id.wrong_answers);
+
+        StorageHelper.Storage data = StorageHelper.loadStorage(this);
+
+        correctText.setText(String.format("%s", data.getTotalCorrect()));
+        wrongText.setText(String.format("%s", data.getTotalWrong()));
+    }
+
     public void showMainMenu(View view) {
         finish();
     }
 
+    public void resetStats(View view) {
+
+        StorageHelper.Storage data = StorageHelper.loadStorage(this);
+        data.setTotalWrong(0);
+        data.setTotalCorrect(0);
+        StorageHelper.saveStorage(this, data);
+
+        updateValues();
+    }
 }

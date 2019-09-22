@@ -7,6 +7,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.os.Handler;
+import android.os.Message;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -21,7 +23,6 @@ import app.sagen.matteapp.Question;
 import app.sagen.matteapp.StorageHelper;
 
 public class SpillActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,32 +42,46 @@ public class SpillActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    @Override
+    public void onBackPressed() {
+        showExitDialog();
+    }
+
+    public void avsluttButton(View view) {
+        showExitDialog();
+    }
+
+    private void clearFeedback() {
+        TextView feedbackText = findViewById(R.id.answer_feedback_text);
+        feedbackText.setText("");
+    }
+
     private void updateQuestion() {
         ProgressManager progressManager = ProgressManager.get(this);
 
+        boolean finished = false;
         StorageHelper.Storage data = StorageHelper.loadStorage(this);
         if(!progressManager.hasMoreQuestions()) {
             showNoMoreQuestionsDialog();
-
-            progressManager.resetStats();
-
-            data.setTotalCorrect(data.getCurrentCorrect() + progressManager.getCorrectAnswers());
-            data.setTotalWrong(data.getCurrentWrong() + progressManager.getWrongAnswers());
-
-            StorageHelper.saveStorage(this, data);
-            return;
+            finished = true;
         }
 
         int answeredQuestions = progressManager.getCorrectAnswers() + progressManager.getWrongAnswers();
         if(answeredQuestions >= data.getNumTasks()) {
             showFinishedDialog(progressManager.getCorrectAnswers(), answeredQuestions);
+            finished = true;
+        }
 
-            progressManager.resetStats();
-
-            data.setTotalCorrect(data.getCurrentCorrect() + progressManager.getCorrectAnswers());
-            data.setTotalWrong(data.getCurrentWrong() + progressManager.getWrongAnswers());
-
+        if(finished) {
+            data.setTotalCorrect(data.getTotalCorrect() + progressManager.getCorrectAnswers());
+            data.setTotalWrong(data.getTotalWrong() + progressManager.getWrongAnswers());
             StorageHelper.saveStorage(this, data);
+            progressManager.resetStats();
             return;
         }
 
@@ -74,6 +89,55 @@ public class SpillActivity extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.questionBox);
         textView.setText(String.format("%s = ?", question.getQuestion()));
+    }
+
+    public void addNumber(View view) {
+
+        EditText input = findViewById(R.id.answer_field);
+
+        if(input.getText().length() < 4) {
+            input.getText().append(((Button) view).getText());
+        }
+    }
+
+    public void angreClick(View view) {
+        EditText input = findViewById(R.id.answer_field);
+        Editable text = input.getText();
+        if(text.length() > 0) {
+            text.delete(text.length() - 1, text.length());
+        }
+    }
+
+    public int parseAnswer() {
+        EditText input = findViewById(R.id.answer_field);
+        try {
+            return Integer.parseInt(input.getText().toString());
+        } catch (NumberFormatException e) {
+            input.getText().clear();
+            Log.i("SpillActivity", "Could not parse number " + input.getText());
+            return -1;
+        }
+    }
+
+    public void checkAnswerButton(View view) {
+
+        ProgressManager progressManager = ProgressManager.get(this);
+        boolean correctAnswer = progressManager.checkAnswerAndProgressIfCorrect(parseAnswer());
+
+        // todo: Clear the answer_field without breaking it....
+        setContentView(R.layout.activity_spill);
+
+        // Update text fields and check for finish states
+        updateQuestion();
+
+        TextView feedbackText = findViewById(R.id.answer_feedback_text);
+        if(correctAnswer) {
+            feedbackText.setText(R.string.spill_riktig_svar);
+            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.primary_dark));
+        } else {
+            feedbackText.setText(R.string.spill_feil_svar);
+            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.error_text));
+        }
     }
 
     private void showFinishedDialog(int correctAnswers, int numTasks) {
@@ -100,6 +164,7 @@ public class SpillActivity extends AppCompatActivity {
                     @Override
                     public void onCancel(DialogInterface dialog) {
                         updateQuestion();
+                        clearFeedback();
                     }
                 })
                 .create()
@@ -131,52 +196,28 @@ public class SpillActivity extends AppCompatActivity {
 
     }
 
-    public void addNumber(View view) {
+    private void showExitDialog() {
 
-        EditText input = findViewById(R.id.answer_field);
+        new AlertDialog.Builder(this)
+                .setTitle(getString(R.string.exit_dialog_title))
+                .setMessage(getString(R.string.exit_dialog_message))
+                .setCancelable(true)
+                .setNegativeButton(getString(R.string.exit_dialog_negative), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setPositiveButton(getString(R.string.exit_dialog_possitive), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        ProgressManager.get(SpillActivity.this).resetStats();
+                        dialog.cancel();
+                    }
+                })
+                .create()
+                .show();
 
-        if(input.getText().length() < 4) {
-            input.getText().append(((Button) view).getText());
-        }
-    }
-
-    public void angreClick(View view) {
-        EditText input = findViewById(R.id.answer_field);
-        Editable text = input.getText();
-        if(text.length() > 0) {
-            text.delete(text.length() - 1, text.length());
-        }
-    }
-
-    public void checkAnswerButton(View view) {
-        EditText input = findViewById(R.id.answer_field);
-        int inputNumber;
-        try {
-            inputNumber = Integer.parseInt(input.getText().toString());
-        } catch (NumberFormatException e) {
-            input.getText().clear();
-            return;
-        }
-
-        boolean correctAnswer = ProgressManager.get(this).checkAnswerAndProgressIfCorrect(inputNumber);
-
-        // todo: Fix the fix, clear the answer_field without breaking it....
-        setContentView(R.layout.activity_spill);
-        updateQuestion();
-
-        TextView feedbackText = findViewById(R.id.answer_feedback_text);
-        if(correctAnswer) {
-            // todo: show correct answer message
-            feedbackText.setText(R.string.spill_riktig_svar);
-            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.primary));
-        } else {
-            // todo: show wrong answer message
-            feedbackText.setText(R.string.spill_feil_svar);
-            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.error_text));
-        }
-    }
-
-    public void avsluttButton(View view) {
-        finish();
     }
 }

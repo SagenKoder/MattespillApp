@@ -25,4 +25,9 @@
     <string name="dialog_no_more_title">Keine weiteren Fragen!</string>
     <string name="spill_feil_svar">Falsche Antwort</string>
     <string name="spill_riktig_svar">Richtige Antwort</string>
+    <string name="exit_dialog_message">Sind Sie sicher, dass Sie wirklich aufhören möchten? Statistiken werden aus dieser Runde nicht gespeichert, wenn Sie mitten in einem Spiel beenden.</string>
+    <string name="exit_dialog_negative">Nein, mach weiter!</string>
+    <string name="exit_dialog_possitive">Ja, hör jetzt auf!</string>
+    <string name="exit_dialog_title">Ending?</string>
+    <string name="spill_ditt_svar">Deine Antwort</string>
 </resources>

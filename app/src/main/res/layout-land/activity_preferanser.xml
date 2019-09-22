@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:background="@drawable/light_green_bg">
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="150dp">
 
-        <!--    Imageview for om jeg ønsker bilde i fremtiden    -->
+<!--    Imageview for om jeg ønsker bilde i fremtiden    -->
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="match_parent"
@@ -24,14 +26,14 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="60dp"
+                android:paddingTop="30dp"
                 android:gravity="center_horizontal">
 
                 <TextView
                     android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/statistikk_title"
+                    android:text="@string/preferanser_title"
                     android:textAlignment="center"
                     android:textSize="@dimen/text_title_size"
                     android:textColor="@color/icons"
@@ -39,7 +41,6 @@
                     android:shadowDx="1"
                     android:shadowDy="1"
                     android:shadowRadius="2"/>
-
             </TableRow>
 
             <TableRow
@@ -52,7 +53,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/statistikk_subtitle"
+                    android:text="@string/preferanser_subtitle"
                     android:textAlignment="center"
                     android:textColor="@color/icons"
                     android:textSize="@dimen/text_subtitle_size"
@@ -67,15 +68,18 @@
 
     </FrameLayout>
 
-    <TableRow
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="40dp">
+        android:layout_gravity="center"
+        android:paddingTop="35dp">
 
         <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="UselessParent"
+            android:paddingEnd="30dp">
 
             <TableRow>
 
@@ -83,55 +87,101 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antall riktige svar"
+                    android:text="@string/preferanser_sprak"
                     android:textAlignment="center"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/text_subtitle_size"/>
             </TableRow>
 
             <TableRow
-                android:paddingTop="10dp">
+                android:paddingTop="20dp">
 
-                <TextView
-                    android:id="@+id/correct_answers"
-                    android:layout_width="wrap_content"
+                <RadioGroup
+                    android:id="@+id/radio_language"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="10"
-                    android:textAlignment="center"
-                    android:textColor="@color/primary_dark"
-                    android:textSize="@dimen/text_subtitle_size" />
+                    android:orientation="horizontal"
+                    android:minWidth="200dp">
 
-            </TableRow>
+                    <RadioButton
+                        android:id="@+id/radio_norsk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="updateLanguage"
+                        android:text="@string/preferanser_language_norsk" />
 
-            <TableRow android:paddingTop="20dp">
-
-                <TextView
-                    android:id="@+id/textView222"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Antall gale svar"
-                    android:textAlignment="center"
-                    android:textColor="@color/secondary_text"
-                    android:textSize="@dimen/text_subtitle_size"/>
-            </TableRow>
-
-            <TableRow
-                android:paddingTop="10dp">
-
-                <TextView
-                    android:id="@+id/wrong_answers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4"
-                    android:textAlignment="center"
-                    android:textColor="@color/error_text"
-                    android:textSize="@dimen/text_subtitle_size"/>
+                    <RadioButton
+                        android:id="@+id/radio_tysk"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateLanguage"
+                        android:text="@string/preferanser_language_tysk" />
+                </RadioGroup>
 
             </TableRow>
 
         </TableLayout>
 
-    </TableRow>
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="30dp">
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/textView222"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/preferanser_antall_oppgaver"
+                    android:textAlignment="center"
+                    android:textColor="@color/secondary_text"
+                    android:textSize="@dimen/text_subtitle_size"/>
+            </TableRow>
+
+            <TableRow
+                android:paddingTop="20dp">
+
+                <RadioGroup
+                    android:id="@+id/radio_num_tasks"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                        android:checked="true"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_1" />
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_2" />
+
+                    <RadioButton
+                        android:id="@+id/radio_num_tasks_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:onClick="updateNumTasks"
+                        android:text="@integer/preference_number_of_tasks_3" />
+                </RadioGroup>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -140,20 +190,6 @@
         android:orientation="vertical"
         android:paddingRight="60dp"
         android:paddingLeft="60dp">
-
-        <Button
-            android:id="@+id/reset_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttons_warning"
-            android:onClick="resetStats"
-            android:drawableStart="@drawable/ic_warning_black_24dp"
-            android:paddingStart="@dimen/button_padding_left"
-            android:paddingEnd="@dimen/button_padding_right"
-            android:text="Reset statistikk"
-            android:textColor="@color/icons"
-            android:textSize="@dimen/text_button_size"
-            android:layout_marginBottom="20dp"/>
 
         <Button
             android:id="@+id/button1"
@@ -167,7 +203,9 @@
             android:paddingEnd="@dimen/button_padding_right"
             android:text="@string/preferanser_button_back"
             android:textColor="@color/icons"
-            android:textSize="@dimen/text_button_size" />
+            android:textSize="@dimen/text_button_size"
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
+
 </TableLayout>
