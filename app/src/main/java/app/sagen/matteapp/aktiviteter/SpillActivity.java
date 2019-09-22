@@ -7,8 +7,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.os.Handler;
-import android.os.Message;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +24,6 @@ public class SpillActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_spill);
         updateQuestion();
     }
 
@@ -66,17 +63,21 @@ public class SpillActivity extends AppCompatActivity {
 
         boolean finished = false;
         StorageHelper.Storage data = StorageHelper.loadStorage(this);
+
+        // check if it has any questions left
         if(!progressManager.hasMoreQuestions()) {
             showNoMoreQuestionsDialog();
             finished = true;
         }
 
+        // check if all questions of this game is used (5/10/25)
         int answeredQuestions = progressManager.getCorrectAnswers() + progressManager.getWrongAnswers();
         if(answeredQuestions >= data.getNumTasks()) {
             showFinishedDialog(progressManager.getCorrectAnswers(), answeredQuestions);
             finished = true;
         }
 
+        // save data and cleanup
         if(finished) {
             data.setTotalCorrect(data.getTotalCorrect() + progressManager.getCorrectAnswers());
             data.setTotalWrong(data.getTotalWrong() + progressManager.getWrongAnswers());
@@ -87,8 +88,16 @@ public class SpillActivity extends AppCompatActivity {
 
         Question question = progressManager.getCurrentQuestion();
 
+        // update screen
+        setContentView(R.layout.activity_spill);
+
         TextView textView = findViewById(R.id.questionBox);
+        TextView numberCorrextText = findViewById(R.id.number_correct_text);
+        TextView numberWrongText = findViewById(R.id.number_wrong_text);
+
         textView.setText(String.format("%s = ?", question.getQuestion()));
+        numberCorrextText.setText(String.format("%s", progressManager.getCorrectAnswers()));
+        numberWrongText.setText(String.format("%s", progressManager.getWrongAnswers()));
     }
 
     public void addNumber(View view) {
@@ -122,10 +131,11 @@ public class SpillActivity extends AppCompatActivity {
     public void checkAnswerButton(View view) {
 
         ProgressManager progressManager = ProgressManager.get(this);
-        boolean correctAnswer = progressManager.checkAnswerAndProgressIfCorrect(parseAnswer());
 
-        // todo: Clear the answer_field without breaking it....
-        setContentView(R.layout.activity_spill);
+        int givenNumber = parseAnswer();
+        if(givenNumber < 0) return; // don't do anything on malformed number...
+
+        boolean correctAnswer = progressManager.checkAnswerAndProgressIfCorrect(givenNumber);
 
         // Update text fields and check for finish states
         updateQuestion();

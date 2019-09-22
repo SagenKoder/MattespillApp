@@ -57,4 +57,5 @@
     <string name="exit_dialog_negative">Nei, fortsett spillet!</string>
     <string name="exit_dialog_possitive">Ja, avslutt nå!</string>
     <string name="spill_ditt_svar">Ditt svar</string>
+    <string name="spill_stats_divider">/</string>
 </resources>

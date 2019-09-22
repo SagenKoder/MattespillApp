@@ -7,6 +7,41 @@
     android:gravity="center_horizontal"
     android:background="@drawable/light_green_bg">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/number_correct_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primary_dark"
+            android:textSize="@dimen/text_title_size"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/number_divider_text"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_title_size"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="@string/spill_stats_divider" />
+
+        <TextView
+            android:id="@+id/number_wrong_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:textSize="@dimen/text_title_size"
+            android:text="" />
+
+    </LinearLayout>
+
     <TextView
         android:layout_marginTop="80dp"
         android:id="@+id/textView3"
@@ -281,7 +316,7 @@
                 android:layout_weight="1"
                 android:text=""
                 android:background="@drawable/buttons_disabled"
-                android:textColor="@color/icons"
+                android:textColor="@android:color/holo_red_dark"
                 android:textSize="@dimen/text_button_size"
                 android:layout_margin="2dp"/>
 
@@ -306,7 +341,7 @@
                 android:layout_weight="1"
                 android:text=""
                 android:background="@drawable/buttons_disabled"
-                android:textColor="@color/icons"
+                android:textColor="@color/primary_dark"
                 android:textSize="@dimen/text_button_size"
                 android:layout_margin="2dp"/>
 
