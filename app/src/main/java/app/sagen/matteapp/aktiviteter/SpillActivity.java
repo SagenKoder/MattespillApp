@@ -2,17 +2,16 @@ package app.sagen.matteapp.aktiviteter;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import java.util.Arrays;
 
@@ -21,6 +20,7 @@ import app.sagen.matteapp.Question;
 import app.sagen.matteapp.StorageHelper;
 
 public class SpillActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,21 +64,24 @@ public class SpillActivity extends AppCompatActivity {
         boolean finished = false;
         StorageHelper.Storage data = StorageHelper.loadStorage(this);
 
+        // update screen
+        setContentView(R.layout.activity_spill);
+
         // check if it has any questions left
-        if(!progressManager.hasMoreQuestions()) {
+        if (!progressManager.hasMoreQuestions()) {
             showNoMoreQuestionsDialog();
             finished = true;
         }
 
         // check if all questions of this game is used (5/10/25)
         int answeredQuestions = progressManager.getCorrectAnswers() + progressManager.getWrongAnswers();
-        if(answeredQuestions >= data.getNumTasks()) {
+        if (answeredQuestions >= data.getNumTasks()) {
             showFinishedDialog(progressManager.getCorrectAnswers(), answeredQuestions);
             finished = true;
         }
 
         // save data and cleanup
-        if(finished) {
+        if (finished) {
             data.setTotalCorrect(data.getTotalCorrect() + progressManager.getCorrectAnswers());
             data.setTotalWrong(data.getTotalWrong() + progressManager.getWrongAnswers());
             StorageHelper.saveStorage(this, data);
@@ -88,10 +91,7 @@ public class SpillActivity extends AppCompatActivity {
 
         Question question = progressManager.getCurrentQuestion();
 
-        // update screen
-        setContentView(R.layout.activity_spill);
-
-        TextView textView = findViewById(R.id.questionBox);
+        TextView textView = findViewById(R.id.question_box);
         TextView numberCorrextText = findViewById(R.id.number_correct_text);
         TextView numberWrongText = findViewById(R.id.number_wrong_text);
 
@@ -104,7 +104,7 @@ public class SpillActivity extends AppCompatActivity {
 
         EditText input = findViewById(R.id.answer_field);
 
-        if(input.getText().length() < 4) {
+        if (input.getText().length() < 4) {
             input.getText().append(((Button) view).getText());
         }
     }
@@ -112,7 +112,7 @@ public class SpillActivity extends AppCompatActivity {
     public void angreClick(View view) {
         EditText input = findViewById(R.id.answer_field);
         Editable text = input.getText();
-        if(text.length() > 0) {
+        if (text.length() > 0) {
             text.delete(text.length() - 1, text.length());
         }
     }
@@ -133,7 +133,7 @@ public class SpillActivity extends AppCompatActivity {
         ProgressManager progressManager = ProgressManager.get(this);
 
         int givenNumber = parseAnswer();
-        if(givenNumber < 0) return; // don't do anything on malformed number...
+        if (givenNumber < 0) return; // don't do anything on malformed number...
 
         boolean correctAnswer = progressManager.checkAnswerAndProgressIfCorrect(givenNumber);
 
@@ -141,12 +141,12 @@ public class SpillActivity extends AppCompatActivity {
         updateQuestion();
 
         TextView feedbackText = findViewById(R.id.answer_feedback_text);
-        if(correctAnswer) {
+        if (correctAnswer) {
             feedbackText.setText(R.string.spill_riktig_svar);
             feedbackText.setTextColor(ContextCompat.getColor(this, R.color.primary_dark));
         } else {
             feedbackText.setText(R.string.spill_feil_svar);
-            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.error_text));
+            feedbackText.setTextColor(ContextCompat.getColor(this, R.color.accent));
         }
     }
 
@@ -207,6 +207,15 @@ public class SpillActivity extends AppCompatActivity {
     }
 
     private void showExitDialog() {
+
+        ProgressManager progressManager = ProgressManager.get(this);
+        int answeredQuestions = progressManager.getCorrectAnswers() + progressManager.getWrongAnswers();
+
+        // not answered any questions yet, just quit
+        if (answeredQuestions == 0) {
+            finish();
+            return;
+        }
 
         new AlertDialog.Builder(this)
                 .setTitle(getString(R.string.exit_dialog_title))

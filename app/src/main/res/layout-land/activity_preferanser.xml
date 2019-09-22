@@ -13,7 +13,6 @@
 
 <!--    Imageview for om jeg ønsker bilde i fremtiden    -->
         <ImageView
-            android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -30,7 +29,6 @@
                 android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/preferanser_title"
@@ -50,7 +48,6 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/preferanser_subtitle"
@@ -78,13 +75,12 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:ignore="UselessParent"
+            tools:ignore="RtlSymmetry,UselessParent"
             android:paddingEnd="30dp">
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/preferanser_sprak"
@@ -97,7 +93,6 @@
                 android:paddingTop="20dp">
 
                 <RadioGroup
-                    android:id="@+id/radio_language"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
@@ -128,12 +123,12 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="30dp">
+            android:paddingStart="30dp"
+            tools:ignore="RtlSymmetry">
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView222"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/preferanser_antall_oppgaver"
@@ -146,7 +141,6 @@
                 android:paddingTop="20dp">
 
                 <RadioGroup
-                    android:id="@+id/radio_num_tasks"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -192,7 +186,6 @@
         android:paddingLeft="60dp">
 
         <Button
-            android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttons"

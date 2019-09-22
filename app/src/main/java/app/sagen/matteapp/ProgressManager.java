@@ -15,7 +15,7 @@ public class ProgressManager {
     private static ProgressManager instance;
 
     public static ProgressManager get(Context context) {
-        if(instance == null) instance = new ProgressManager(context);
+        if (instance == null) instance = new ProgressManager(context);
         return instance;
     }
 
@@ -28,9 +28,9 @@ public class ProgressManager {
         String[] rawQuestions = context.getResources().getStringArray(R.array.questions);
         List<Question> questionsList = new ArrayList<>();
 
-        for(String rawQuestion : rawQuestions) {
+        for (String rawQuestion : rawQuestions) {
             String[] split = rawQuestion.split("=");
-            if(split.length != 2) {
+            if (split.length != 2) {
                 Log.e("ProgressManager", "The question '" + rawQuestion + "' could not be parsed!");
                 continue;
             }
@@ -53,14 +53,14 @@ public class ProgressManager {
     }
 
     public Question getCurrentQuestion() {
-        if(progress >= questions.length) {
+        if (progress >= questions.length) {
             return null;
         }
         return questions[progress];
     }
 
     public boolean checkAnswerAndProgressIfCorrect(int input) {
-        if(input == getCurrentQuestion().getAnswer()) {
+        if (input == getCurrentQuestion().getAnswer()) {
             correctAnswers++;
             progress++;
             return true;

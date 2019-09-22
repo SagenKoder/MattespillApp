@@ -48,11 +48,11 @@ public class PreferanserActivity extends AppCompatActivity {
         int num2 = getResources().getInteger(R.integer.preference_number_of_tasks_2);
         int num3 = getResources().getInteger(R.integer.preference_number_of_tasks_3);
 
-        if(data.getNumTasks() == num1) {
+        if (data.getNumTasks() == num1) {
             radioButtonNumTasks1.setChecked(true);
-        } else if(data.getNumTasks() == num2) {
+        } else if (data.getNumTasks() == num2) {
             radioButtonNumTasks2.setChecked(true);
-        } else if(data.getNumTasks() == num3) {
+        } else if (data.getNumTasks() == num3) {
             radioButtonNumTasks3.setChecked(true);
         } else {
             Log.e("PreferenceActivity", "Could not find the number '" + data.getNumTasks() + "'!");

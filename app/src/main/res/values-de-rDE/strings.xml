@@ -16,7 +16,7 @@
     <string name="spill_angre">Entfernen</string>
     <string name="spill_avslutt">Ausfahrt</string>
     <string name="spill_los_oppgaven">Lösen Sie das Problem</string>
-    <string name="dialog_finished_message">Sie haben mit %s von %s richtig geantwortet. Möchten Sie eine neue Runde beginnen oder beenden?</string>
+    <string name="dialog_finished_message">Sie haben mit %d von %d richtig geantwortet. Möchten Sie eine neue Runde beginnen oder beenden?</string>
     <string name="dialog_finished_new">Neue Runde</string>
     <string name="dialog_finished_quit">Ausfahrt</string>
     <string name="dialog_finished_title">Du bist fertig!</string>
@@ -30,4 +30,7 @@
     <string name="exit_dialog_possitive">Ja, hör jetzt auf!</string>
     <string name="exit_dialog_title">Ending?</string>
     <string name="spill_ditt_svar">Deine Antwort</string>
+    <string name="statistikk_num_correct_answers">Anzahl der richtigen Antworten</string>
+    <string name="statistikk_num_wrong_answers">Anzahl falscher Antworten</string>
+    <string name="statistikk_reset_button">Rücksetzen</string>
 </resources>

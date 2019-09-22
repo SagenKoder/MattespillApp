@@ -2,11 +2,7 @@ package app.sagen.matteapp;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
-import android.util.DisplayMetrics;
 import android.util.Log;
-
-import java.util.Locale;
 
 import app.sagen.matteapp.aktiviteter.R;
 
@@ -87,7 +83,7 @@ public class StorageHelper {
 
         LanguageHelper.setLocale(context, language);
 
-        Log.d("StorageHelper", "Changed app language to " + language + " v2" );
+        Log.d("StorageHelper", "Changed app language to " + language + " v2");
     }
 
     public static class Storage {

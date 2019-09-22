@@ -25,7 +25,6 @@
     <integer name="preference_number_of_tasks_2">10</integer>
     <integer name="preference_number_of_tasks_3">25</integer>
 
-    <string name="statistikk_file" translatable="false">statistikk</string>
     <string name="preferanser_sprak">Språk</string>
     <string name="statistikk_title">Statistikk</string>
     <string name="statistikk_subtitle">Se dine resultater</string>
@@ -44,10 +43,10 @@
     <string name="spill_0" translatable="false">0</string>
     
     <string name="dialog_no_more_title">Ingen fler spørsmål!</string>
-    <string name="dialog_no_more_message">Du har ingen spørsmål tilgjengelig... Restart appen for å laste nye spørsmål.</string>
+    <string name="dialog_no_more_message">Du har ingen spørsmål tilgjengelig. Restart appen for å laste nye spørsmål.</string>
     <string name="dialog_no_more_btn_avslutt">Avslutt</string>
     <string name="dialog_finished_title">Du er ferdig!</string>
-    <string name="dialog_finished_message">Du svarte riktig på %s av %s \nØnsker du å starte en ny runde eller avslutte?</string>
+    <string name="dialog_finished_message">Du svarte riktig på %d av %d \nØnsker du å starte en ny runde eller avslutte?</string>
     <string name="dialog_finished_new">Ny runde</string>
     <string name="dialog_finished_quit">Avslutt</string>
     <string name="spill_riktig_svar">Riktig svar</string>
@@ -57,5 +56,8 @@
     <string name="exit_dialog_negative">Nei, fortsett spillet!</string>
     <string name="exit_dialog_possitive">Ja, avslutt nå!</string>
     <string name="spill_ditt_svar">Ditt svar</string>
-    <string name="spill_stats_divider">/</string>
+    <string name="spill_stats_divider" translatable="false">/</string>
+    <string name="statistikk_num_correct_answers">Antall riktige svar</string>
+    <string name="statistikk_num_wrong_answers">Antall gale svar</string>
+    <string name="statistikk_reset_button">Tilbakestill</string>
 </resources>

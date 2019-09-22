@@ -11,7 +11,6 @@
 
         <!--    Imageview for om jeg ønsker bilde i fremtiden    -->
         <ImageView
-            android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -28,7 +27,6 @@
                 android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/statistikk_title"
@@ -49,7 +47,6 @@
                 android:paddingTop="20dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/statistikk_subtitle"
@@ -77,16 +74,15 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:ignore="UselessParent"
+            tools:ignore="RtlSymmetry,UselessParent"
             android:paddingEnd="30dp">
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antall riktige svar"
+                    android:text="@string/statistikk_num_correct_answers"
                     android:textAlignment="center"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/text_subtitle_size"/>
@@ -99,7 +95,7 @@
                     android:id="@+id/correct_answers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="10"
+                    android:text=""
                     android:textAlignment="center"
                     android:textColor="@color/primary_dark"
                     android:textSize="@dimen/text_subtitle_size" />
@@ -111,15 +107,15 @@
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="30dp">
+            android:paddingStart="30dp"
+            tools:ignore="RtlSymmetry">
 
             <TableRow>
 
                 <TextView
-                    android:id="@+id/textView222"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Antall gale svar"
+                    android:text="@string/statistikk_num_wrong_answers"
                     android:textAlignment="center"
                     android:textColor="@color/secondary_text"
                     android:textSize="@dimen/text_subtitle_size"/>
@@ -133,9 +129,9 @@
                     android:id="@+id/wrong_answers"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4"
+                    android:text=""
                     android:textAlignment="center"
-                    android:textColor="@color/error_text"
+                    android:textColor="@color/accent"
                     android:textSize="@dimen/text_subtitle_size"/>
 
             </TableRow>
@@ -156,39 +152,38 @@
             android:stretchColumns="*">
 
             <TableRow>
-        <Button
-            android:id="@+id/reset_button"
-            android:width="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttons_warning"
-            android:onClick="resetStats"
-            android:drawablePadding="10dp"
-            android:paddingEnd="@dimen/button_padding_right"
-            android:text="Reset statistikk"
-            android:textColor="@color/icons"
-            android:textSize="@dimen/text_button_size"
-            android:drawableStart="@drawable/ic_warning_black_24dp"
-            android:paddingStart="@dimen/button_padding_left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"/>
 
-        <Button
-            android:id="@+id/button1"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:width="0dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/buttons"
-            android:drawableStart="@drawable/inline_ic_arrow_back_white"
-            android:drawablePadding="10dp"
-            android:onClick="showMainMenu"
-            android:paddingStart="@dimen/button_padding_left"
-            android:paddingEnd="@dimen/button_padding_right"
-            android:text="@string/preferanser_button_back"
-            android:textColor="@color/icons"
-            android:textSize="@dimen/text_button_size" />
+                <Button
+                    android:width="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttons_warning"
+                    android:onClick="resetStats"
+                    android:drawablePadding="10dp"
+                    android:paddingEnd="@dimen/button_padding_right"
+                    android:text="@string/statistikk_reset_button"
+                    android:textColor="@color/icons"
+                    android:textSize="@dimen/text_button_size"
+                    android:drawableStart="@drawable/ic_warning_black_24dp"
+                    android:paddingStart="@dimen/button_padding_left"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"/>
+
+                <Button
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:width="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/buttons"
+                    android:drawableStart="@drawable/inline_ic_arrow_back_white"
+                    android:drawablePadding="10dp"
+                    android:onClick="showMainMenu"
+                    android:paddingStart="@dimen/button_padding_left"
+                    android:paddingEnd="@dimen/button_padding_right"
+                    android:text="@string/preferanser_button_back"
+                    android:textColor="@color/icons"
+                    android:textSize="@dimen/text_button_size" />
 
             </TableRow>
 

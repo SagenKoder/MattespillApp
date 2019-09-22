@@ -12,7 +12,6 @@
 
         <!--    Imageview for om jeg ønsker bilde i fremtiden    -->
         <ImageView
-            android:id="@+id/imageView1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -29,7 +28,6 @@
                 android:gravity="center_horizontal">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/front_title"
@@ -50,7 +48,6 @@
                 android:paddingTop="20dp">
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/front_subtitle"
@@ -77,7 +74,6 @@
         android:paddingLeft="60dp">
 
         <Button
-            android:id="@+id/button1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttons"
@@ -92,7 +88,6 @@
             android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttons"
@@ -107,7 +102,6 @@
             android:layout_marginBottom="20dp"/>
 
         <Button
-            android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/buttons"

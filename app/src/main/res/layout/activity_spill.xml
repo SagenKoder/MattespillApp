@@ -23,8 +23,6 @@
             android:text="" />
 
         <TextView
-            android:id="@+id/number_divider_text"
-            android:layout_centerHorizontal="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/text_title_size"
@@ -36,7 +34,7 @@
             android:id="@+id/number_wrong_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@color/accent"
             android:textSize="@dimen/text_title_size"
             android:text="" />
 
@@ -44,7 +42,7 @@
 
     <TextView
         android:layout_marginTop="80dp"
-        android:id="@+id/textView3"
+        android:id="@+id/solve_task_text"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -53,11 +51,11 @@
 
     <TextView
         android:layout_marginTop="10dp"
-        android:id="@+id/questionBox"
+        android:id="@+id/question_box"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/solve_task_text"
         android:textSize="@dimen/text_title_size"
         android:text=""/>
 
@@ -67,7 +65,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/questionBox"
+        android:layout_below="@+id/question_box"
         android:textSize="@dimen/text_subtitle_size"
         android:text="@string/spill_ditt_svar"/>
 
@@ -95,14 +93,13 @@
                 tools:ignore="RtlSymmetry" />
 
             <ImageButton
-                android:id="@+id/button_clear"
                 android:src="@drawable/ic_backspace_black_24dp"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/inline_ic_thumb_up_white"
                 android:paddingEnd="3dp"
                 android:text=""
-                android:background="@drawable/buttons"
+                android:background="@drawable/buttons_dark"
                 android:textColor="@color/icons"
                 android:textSize="@dimen/text_button_size"
                 android:layout_margin="2dp"
@@ -135,7 +132,6 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/buttonX"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,7 +146,6 @@
                 android:padding="6dp"/>
 
             <ImageButton
-                android:id="@+id/buttonY"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -171,7 +166,6 @@
             android:gravity="center">
 
                 <Button
-                    android:id="@+id/button1"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -184,7 +178,6 @@
                     android:onClick="addNumber"/>
 
                 <Button
-                    android:id="@+id/button2"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -197,7 +190,6 @@
                     android:onClick="addNumber"/>
 
                 <Button
-                    android:id="@+id/button3"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -217,7 +209,6 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/button4"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -230,7 +221,6 @@
                 android:onClick="addNumber"/>
 
             <Button
-                android:id="@+id/button5"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -243,7 +233,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/button6"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -263,7 +252,6 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/button7"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -276,7 +264,6 @@
                 android:onClick="addNumber"/>
 
             <Button
-                android:id="@+id/button8"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -289,7 +276,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/button9"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -309,19 +295,17 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/buttonA"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text=""
                 android:background="@drawable/buttons_disabled"
-                android:textColor="@android:color/holo_red_dark"
+                android:textColor="@color/accent"
                 android:textSize="@dimen/text_button_size"
                 android:layout_margin="2dp"/>
 
             <Button
-                android:id="@+id/button0"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -334,7 +318,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/buttonB"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

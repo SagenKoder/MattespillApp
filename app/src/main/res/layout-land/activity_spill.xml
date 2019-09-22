@@ -23,7 +23,6 @@
             android:text=""/>
 
         <TextView
-            android:id="@+id/textView322222"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
@@ -35,7 +34,7 @@
             android:id="@+id/number_wrong_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@color/accent"
             android:textSize="@dimen/text_title_size"
             android:text="" />
 
@@ -59,7 +58,6 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_subtitle_size"
@@ -67,7 +65,7 @@
                     android:text="@string/spill_los_oppgaven" />
 
                 <TextView
-                    android:id="@+id/questionBox"
+                    android:id="@+id/question_box"
                     android:paddingTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -84,7 +82,7 @@
                 android:gravity="center">
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/solve_task_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="@dimen/text_subtitle_size"
@@ -113,13 +111,12 @@
                         tools:ignore="RtlSymmetry" />
 
                     <ImageButton
-                        android:id="@+id/button_clear"
                         android:src="@drawable/ic_backspace_black_24dp"
                         android:layout_width="40dp"
                         android:layout_weight="0"
                         android:layout_height="40dp"
                         android:text=""
-                        android:background="@drawable/buttons"
+                        android:background="@drawable/buttons_dark"
                         android:textColor="@color/icons"
                         android:textSize="@dimen/text_button_size"
                         android:layout_margin="2dp"
@@ -159,7 +156,6 @@
             android:gravity="center">
 
             <ImageButton
-                android:id="@+id/buttonX"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -174,7 +170,6 @@
                 android:padding="8dp"/>
 
             <ImageButton
-                android:id="@+id/buttonY"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -196,7 +191,6 @@
             android:gravity="center">
 
                 <Button
-                    android:id="@+id/button1"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_land"
@@ -209,7 +203,6 @@
                     android:onClick="addNumber"/>
 
                 <Button
-                    android:id="@+id/button2"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_land"
@@ -222,7 +215,6 @@
                     android:onClick="addNumber"/>
 
                 <Button
-                    android:id="@+id/button3"
                     android:width="0dp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/button_height_land"
@@ -242,7 +234,6 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/button4"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -255,7 +246,6 @@
                 android:onClick="addNumber"/>
 
             <Button
-                android:id="@+id/button5"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -268,7 +258,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/button6"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -288,7 +277,6 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/button7"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -301,7 +289,6 @@
                 android:onClick="addNumber"/>
 
             <Button
-                android:id="@+id/button8"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -314,7 +301,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/button9"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -334,7 +320,6 @@
             android:gravity="center_horizontal">
 
             <Button
-                android:id="@+id/buttonA"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -346,7 +331,6 @@
                 android:layout_margin="2dp"/>
 
             <Button
-                android:id="@+id/button0"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
@@ -359,7 +343,6 @@
                 android:onClick="addNumber" />
 
             <Button
-                android:id="@+id/buttonB"
                 android:width="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/button_height_land"
