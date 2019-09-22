@@ -52,4 +52,9 @@
     <string name="dialog_finished_quit">Avslutt</string>
     <string name="spill_riktig_svar">Riktig svar</string>
     <string name="spill_feil_svar">Feil svar</string>
+    <string name="exit_dialog_message">Er du sikker på at du virkelig vil avslutte? Statistikk vil ikke bli lagret fra denne runden om du avslutter midt i et spill.</string>
+    <string name="exit_dialog_title">Avslutte?</string>
+    <string name="exit_dialog_negative">Nei, fortsett spillet!</string>
+    <string name="exit_dialog_possitive">Ja, avslutt nå!</string>
+    <string name="spill_ditt_svar">Ditt svar</string>
 </resources>
